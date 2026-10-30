@@ -24,3 +24,15 @@ This is an early source prototype, not a finished AAA game or compiled APK. Plac
 - Android: on-screen movement pad and Action button.
 
 All game code and assets in this project are intended to be original or properly licensed. No proprietary game assets are included.
+
+
+## Scene setup checklist
+- Add a GameObject named `GameManager` with `WildhavenGameManager`.
+- Create a Player object with a `CharacterController`, tag it `Player`, and add `PlayerMotor`.
+- Add a camera with `FollowCamera`; assign the Player as its target and assign the camera transform to `PlayerMotor`.
+- Create a Canvas with a joystick background and handle; add `MobileJoystick` and assign both RectTransforms.
+- Add trigger colliders to resource prefabs and attach `WorldPickup`.
+- Add a shelter object with `ShelterStation`; assign its staged upgrade visuals.
+- Add HUD Text elements and connect them to `RuntimeHUD`.
+
+The movement script uses Unity's legacy Input axes as its editor fallback. If your project is configured for the new Input System only, enable **Both** under Player Settings > Active Input Handling, or replace that fallback with Input System actions.
