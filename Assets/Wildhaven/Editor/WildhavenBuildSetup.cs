@@ -69,6 +69,12 @@ namespace Wildhaven.Editor
             Object.DestroyImmediate(player.GetComponent<CapsuleCollider>());
             player.AddComponent<CharacterController>();
             player.AddComponent<PlayerMotor>();
+            var customizer = player.AddComponent<CharacterCustomizer>();
+            var customizerData = new SerializedObject(customizer);
+            var renderers = customizerData.FindProperty("outfitRenderers");
+            renderers.arraySize = 1;
+            renderers.GetArrayElementAtIndex(0).objectReferenceValue = player.GetComponent<Renderer>();
+            customizerData.ApplyModifiedPropertiesWithoutUndo();
         }
 
         private static void CreateCamera()
