@@ -43,6 +43,7 @@ namespace Wildhaven.Editor
             CreateShelter();
             CreateHud();
             CreateCharacterSelection();
+            CreateMobileControls();
 
             EditorSceneManager.SaveScene(scene, ScenePath);
             EditorBuildSettings.scenes = new[]
@@ -139,6 +140,12 @@ namespace Wildhaven.Editor
             serialized.FindProperty("woodCost").intValue = 5;
             serialized.FindProperty("stoneCost").intValue = 3;
             serialized.ApplyModifiedPropertiesWithoutUndo();
+        }
+
+        private static void CreateMobileControls()
+        {
+            var controls = new GameObject("Mobile Controls");
+            controls.AddComponent<MobileControlsUI>();
         }
 
         private static void CreateCharacterSelection()
