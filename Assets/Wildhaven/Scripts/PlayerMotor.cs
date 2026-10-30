@@ -15,6 +15,8 @@ namespace Wildhaven
 
         private void Awake() => controller = GetComponent<CharacterController>();
 
+        public void SetJoystick(MobileJoystick value) => joystick = value;
+
         private void Update()
         {
             Vector2 input = joystick != null ? joystick.Value :
