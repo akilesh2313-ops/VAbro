@@ -21,7 +21,7 @@ namespace Wildhaven
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1920, 1080);
 
-            var baseObject = MakeUIObject("Joystick Base", canvasObject.transform, new Vector2(0, 0), new Vector2(0, 0), new Vector2(210, 210));
+            var baseObject = MakeUIObject("Joystick Base", canvasObject.transform, new Vector2(0, 0), new Vector2(0.5f, 0.5f), new Vector2(210, 210));
             baseObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.22f);
             var handleObject = MakeUIObject("Joystick Handle", baseObject.transform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(90, 90));
             handleObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.7f);
