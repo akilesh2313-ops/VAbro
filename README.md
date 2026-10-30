@@ -11,6 +11,7 @@ An original third-person island-survival prototype for Android, built with Unity
 - Explorer and Adventurer style selection
 - Forest, Ocean, and Sunset outfit color presets
 - PlayerPrefs persistence for the selected name and presets
+- Runtime-generated mobile joystick and nearby shelter upgrade button
 - Optional island decoration generator
 - GitHub Actions Android APK workflow
 
@@ -24,7 +25,7 @@ An original third-person island-survival prototype for Android, built with Unity
 The scene generator also runs before a build and adds the demo scene to Build Settings.
 
 ## Character setup
-The generated demo scene opens with a character setup panel. Choose Explorer or Adventurer, select an outfit palette, enter a display name, then press **SAVE & PLAY**. The selections are stored locally with PlayerPrefs.
+The generated demo scene opens with a character setup panel. Choose Explorer or Adventurer, select an outfit palette, enter a display name, then press **SAVE & PLAY**. The selections are stored locally with PlayerPrefs. The demo also creates a touch joystick at the lower-left and a shelter upgrade button at the lower-right. The upgrade button works when the player is close enough and has the required resources.
 
 These are gameplay style presets on the same capsule placeholder. They are not separate male/female 3D models, finished costumes, or a production character creator. Real avatar models, rigging, animation, and model swapping still need to be added.
 
@@ -33,7 +34,7 @@ Use **Wildhaven > Generate Island Decorations** to add placeholder palm-style tr
 
 ## Controls
 - Editor: WASD / arrow keys to move.
-- Android: the current demo is not yet equipped with a finished virtual joystick and touch interaction layout.
+- Android: The generated scene includes a basic virtual joystick and a nearby shelter upgrade action button. These controls still need testing on target Android devices.
 
 ## Android APK through GitHub Actions
 1. Configure a valid Unity license for GameCI and add it to the repository's Actions secrets as `UNITY_LICENSE`. Never commit license files or credentials.
