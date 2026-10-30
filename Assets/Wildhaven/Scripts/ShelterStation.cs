@@ -13,8 +13,10 @@ namespace Wildhaven
         {
             var game = WildhavenGameManager.Instance;
             if (game == null || level >= upgradeStages.Length) return false;
-            if (!game.SpendResource(ResourceType.Wood, woodCost) ||
-                !game.SpendResource(ResourceType.Stone, stoneCost)) return false;
+            if (game.GetResource(ResourceType.Wood) < woodCost ||
+                game.GetResource(ResourceType.Stone) < stoneCost) return false;
+            game.SpendResource(ResourceType.Wood, woodCost);
+            game.SpendResource(ResourceType.Stone, stoneCost);
 
             if (level > 0 && upgradeStages[level - 1] != null)
                 upgradeStages[level - 1].SetActive(false);
