@@ -27,6 +27,11 @@ An original third-person island-survival prototype for Android, built with Unity
 
 The workflow is a build configuration only. An APK is produced only after the complete project imports successfully and the Unity license secret is configured.
 
+## Character and island tools
+- Select **Wildhaven > Generate Island Decorations** to add placeholder trees, rocks, and surrounding ocean to the open demo scene.
+- The demo player has a basic outfit color customizer component. Outfit presets are Forest, Ocean, and Sunset; avatar style and display name are exposed through the component for a future character-selection screen.
+- These are functional foundations, not finished character models or high-detail environment art.
+
 ## Controls
 - Editor: WASD / arrow keys to move.
 - Android: connect a `MobileJoystick` component to a Canvas joystick to enable touch movement. The current demo scene is a basic starter scene and does not yet include a finished touch-control layout.
