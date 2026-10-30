@@ -42,6 +42,7 @@ namespace Wildhaven.Editor
             CreatePickup("Stone Pickup", ResourceType.Stone, 3, new Vector3(3, 0.6f, -3), Color.gray);
             CreateShelter();
             CreateHud();
+            CreateCharacterSelection();
 
             EditorSceneManager.SaveScene(scene, ScenePath);
             EditorBuildSettings.scenes = new[]
@@ -138,6 +139,12 @@ namespace Wildhaven.Editor
             serialized.FindProperty("woodCost").intValue = 5;
             serialized.FindProperty("stoneCost").intValue = 3;
             serialized.ApplyModifiedPropertiesWithoutUndo();
+        }
+
+        private static void CreateCharacterSelection()
+        {
+            var setup = new GameObject("Character Selection UI");
+            setup.AddComponent<CharacterSelectionUI>();
         }
 
         private static void CreateHud()
