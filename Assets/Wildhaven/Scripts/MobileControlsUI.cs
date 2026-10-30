@@ -26,10 +26,7 @@ namespace Wildhaven
             var handleObject = MakeUIObject("Joystick Handle", baseObject.transform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(90, 90));
             handleObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.7f);
             joystick = baseObject.AddComponent<MobileJoystick>();
-            var data = new UnityEditor.SerializedObject(joystick);
-            data.FindProperty("background").objectReferenceValue = baseObject.GetComponent<RectTransform>();
-            data.FindProperty("handle").objectReferenceValue = handleObject.GetComponent<RectTransform>();
-            data.ApplyModifiedPropertiesWithoutUndo();
+            joystick.Configure(baseObject.GetComponent<RectTransform>(), handleObject.GetComponent<RectTransform>());
 
             var motor = FindObjectOfType<PlayerMotor>();
             if (motor != null) motor.SetJoystick(joystick);
